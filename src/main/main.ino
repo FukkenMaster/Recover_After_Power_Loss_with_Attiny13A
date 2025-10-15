@@ -1,4 +1,4 @@
-
+#include <Arduino.h>
 
 int sensorLedPin = 2;
 int turnOnLedPin = 3;
@@ -37,41 +37,40 @@ void setup()
 
 void loop()
 {
-
+  // read the status
   isPwrSensorOn = digitalRead(pwrSensorPin);
 
   if (isPwrSensorOn == false)
-  {
-    checkTurnOn();
+  {                // if false
+    checkTurnOn(); // read internal flag
   }
   else
   {
-    checkPwrLed();
-    delay(runningLoopDelay);
+    checkPwrLed();           // correct the status and indicator mismatch
+    delay(runningLoopDelay); // wait
   }
 }
 
 void checkTurnOn()
 {
-  if (isPwrLedOn)
+  if (isPwrLedOn) // check internal flag
   {
-    digitalWrite(sensorLedPin, LOW);
-    isPwrLedOn = false;
-    delay(afterTurnOffDelay);
+    digitalWrite(sensorLedPin, LOW); // if true: turn off the LED
+    isPwrLedOn = false;              // set flag_2 to false
+    delay(afterTurnOffDelay);        // wait...
   }
   else
   {
-    turnOnOnce();
-
-    digitalWrite(sensorLedPin, HIGH);
-    isPwrLedOn = true;
+    turnOnOnce();                     // if flase: attempt pushing the power button until it works
+    digitalWrite(sensorLedPin, HIGH); // turn on the LED
+    isPwrLedOn = true;                // set the flag_2 true
   }
 }
-void checkPwrLed()
+void checkPwrLed() // correct the status and indicator mismatch
 {
   if (isPwrLedOn == false)
   {
-    digitalWrite(sensorLedPin, HIGH);
-    isPwrLedOn = true;
+    digitalWrite(sensorLedPin, HIGH); // if flag_2 is false turn on the LED
+    isPwrLedOn = true;                // set flag_2 to true
   }
 }
