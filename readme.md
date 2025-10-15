@@ -30,7 +30,7 @@ It’s recommended to have basic knowledge of electronics and computer parts to 
 ### Tools
 
 - Soldering iron and consumables
-- USB/UART converter with USB cable, adapted for ATtiny13A
+- USB/UART converter with USB cable and adapter to connect to your ATtiny13A
 
 ### Material
 
