@@ -64,7 +64,7 @@ It’s recommended to have basic knowledge of electronics and computer parts to 
 
 2. **Assemble the hardware** following the schematic below:
 
-![Schematic](img/pcswitch.png)
+![Schematic](img/diagram.png)
 
 To ensure `POWER_STATUS_PIN` gets the status of the **computer power state**, connect the pin to **USB 5V+** or an LED indicator of your laptop which glows when the system is ON.
 
