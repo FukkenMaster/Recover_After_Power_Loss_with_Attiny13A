@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-#define POWER_STATUS_PIN 4
-#define POWER_SWITCH_PIN 0
+#define POWER_STATUS_PIN 3
+#define POWER_SWITCH_PIN 2
 
 #define PUSH_DURATION 100 //ms
 #define COOLDOWN 1000 //ms
