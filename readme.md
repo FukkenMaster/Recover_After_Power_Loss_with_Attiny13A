@@ -48,9 +48,9 @@ It’s recommended to have basic knowledge of electronics and computer parts to 
 
 ## Assembly
 
-1. **Upload the code** with PlatformIO:
+1. **Upload the code before assembling the circuitry!** with PlatformIO:
 
-    pio run --target upload
+    pio run -t upload -e program_via_USBasp
 
 2. **Assemble the hardware** following the schematic below:
 
